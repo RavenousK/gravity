@@ -12,11 +12,11 @@ public class PendulumRunner {
 	NumberFormat nf = NumberFormat.getInstance ();
 	nf.setMaximumFractionDigits (3);
 	
-	double gravity = 9.80665;
+	//double gravity = 9.80665;
 	double delta = (args.length == 0) ? .1 : Double.parseDouble (args[0]);
 	double sLen = 10, pMass = 10, theta0 = Math.PI/30;
-	RegularPendulum rp = new RegularPendulum (sLen, pMass, theta0, delta, gravity);
-	SimplePendulum sp = new SimplePendulum (sLen, pMass, theta0, gravity);
+	RegularPendulum rp = new RegularPendulum (sLen, pMass, theta0, delta);
+	SimplePendulum sp = new SimplePendulum (sLen, pMass, theta0, new GravityConstant());
 	RegularPendulum rpCoarse = 
 		new RegularPendulum (sLen, pMass, theta0, .1);
 

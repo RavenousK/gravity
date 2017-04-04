@@ -22,8 +22,8 @@ public class RegularPendulum extends AbstractPendulum {
     }
 
     public RegularPendulum (double inLength, double inMass, double inTheta0, 
-		     double inDelta) {
-	this (inLength, inMass, inTheta0, inDelta, 0, new GravityConstant());
+		     double inDelta, GravityModel model) {
+	this (inLength, inMass, inTheta0, inDelta, 0, model);
     }
 
     public void step () {
